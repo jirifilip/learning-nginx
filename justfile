@@ -1,9 +1,7 @@
 set shell := ["powershell.exe", "-c"]
 
 dev:
-    docker compose down
-    docker compose build
-    docker compose up
+    watchexec -r -w nginx scripts/reload.ps1
 
 clean:
     docker compose down
